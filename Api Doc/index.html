@@ -1,0 +1,206 @@
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Golang Key Value Store API Documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <div class="logo">
+            <span>Key Value API Documentation</span>
+        </div>
+        <button class="burger-menu-icon" id="button-menu-mobile">
+            <svg width="34" height="34" viewBox="0 0 100 100"><path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path><path class="line line2" d="M 20,50 H 80"></path><path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path></svg>
+        </button>
+    </div>
+    <div class="mobile-menu-closer"></div>
+    <div class="content-menu">
+        <div class="content-infos">
+            <div class="info"><b>Author:</b> Kemal Emre Ballı</div>
+            <div class="info"><b>Last Updated:</b> 1, 11, 2021</div>
+        </div>
+        <ul>
+            <li class="scroll-to-link active" data-target="content-get-started">
+                <a>GET STARTED</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-get-characters">
+                <a>PARAMETERS</a>
+            </li>
+            <li class="scroll-to-link" data-target="content-errors">
+                <a>Errors</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content-page">
+    <div class="content-code"></div>
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-get-started">
+            <h1>Get started</h1>
+            <pre>
+    API Endpoint
+
+        http://localhost:8080
+                </pre>
+            <p>
+This API provides key value store for you. You can send data here with certain endpoints.            </p>
+            <p>
+                To use this API, you need to install the installation in your local file. Please go to the README.MD file for this. </p>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2>PARAMETERS</h2>
+            <pre><code class="bash">
+# Here is a cURL example
+curl --location --request GET 'http://localhost:8080/keys/all'
+                </code></pre>
+            <p>
+               GET => To get the all keys you need to make a GET call to the following url :<br>
+                <code class="higlighted break-word">http://localhost:8080/keys/all</code>
+            </p>
+            <br>
+            <pre><code class="json">
+Result example :
+{"balli":"3","emre":"2","kemal":"1"}
+                </code></pre>
+
+
+
+
+
+                <pre><code class="bash">
+# Here is a cURL example
+curl --location --request GET 'http://localhost:8080/keys?key=istanbul'
+                </code></pre>
+            <p>
+               GET => To get a key you need to GET the following url with a parameter. :<br>
+                <code class="higlighted break-word">http://localhost:8080/keys?key=istanbul</code>
+            </p>
+            <br>
+            <pre><code class="json">
+Result example :
+34
+                </code></pre>
+
+
+
+                
+                <pre><code class="bash">
+# Here is a cURL example
+curl --location --request PUT 'http://localhost:8080/keys?key=istanbul&value=34'
+                </code></pre>
+            <p>
+               PUT => To add a key value to the url you need to call the PUT method with parameters. :<br>
+                <code class="higlighted break-word">http://localhost:8080/keys?key=istanbul&value=34</code>
+            </p>
+            <br>
+            <pre><code class="json">
+Result example :
+Key Added => istanbul
+                </code></pre>
+
+
+
+
+                <pre><code class="bash">
+# Here is a cURL example
+curl --location --request DELETE 'http://localhost:8080/keys'
+                </code></pre>
+            <p>
+               DELETE => To delete all keys you need to DELETE the url. :<br>
+                <code class="higlighted break-word">http://localhost:8080/keys</code>
+            </p>
+            <br>
+            <pre><code class="json">
+Result example :
+All datas was deleted.
+                </code></pre>
+
+
+
+
+
+                <pre><code class="bash">
+# Here is a cURL example
+curl --location --request DELETE 'http://localhost:8080/keys?key=testKey'
+                </code></pre>
+            <p>
+               DELETE => To delete a key you need to DELETE the url. :<br>
+                <code class="higlighted break-word">http://localhost:8080/keys?key=testKey</code>
+            </p>
+            <br>
+            <pre><code class="json">
+Result example :
+ Deleted key is: testKey
+                </code></pre>
+                
+                
+            
+        </div>
+        <div class="overflow-hidden content-section" id="content-errors">
+            <h2>Errors</h2>
+            <p>
+                Key-Value Store API uses the following error codes:
+            </p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Meaning</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>X000</td>
+                    <td>
+                        No data in memory.
+                    </td>
+                </tr>
+                <tr>
+                    <td>X001</td>
+                    <td>
+                        Url Param 'key' is missing.
+                    </td>
+                </tr>
+                <tr>
+                    <td>X002</td>
+                    <td>
+                       There is no value for the key you called.
+                    </td>
+                </tr>
+                <tr>
+                    <td>X003</td>
+                    <td>
+                        Method not allowed.
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="content-code"></div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
