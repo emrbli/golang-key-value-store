@@ -20,7 +20,7 @@ In this service, the data is first pulled from the "mainData.json" file previous
 
 - **DELETE** for all.
 
-#####Check out the "Api Doc" folder for a more detailed API Documentation.
+##### Check out the "doc" folder for a more detailed API Documentation.
 
 ---
 <h3> For Using </h3>
