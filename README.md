@@ -2,7 +2,7 @@
 ---
 **Overview**
 
-This document specifies the tools used in the Key-Value store and reorganizes how to use them. In this created service, In-Memory Key-Value Service was created and how to use the API is specified in the HTML file in the folder named "API-DOC". While writing the service, it was tried to comply with the "DDD" Design Pattern rules. In addition, the Go Documentation was followed and "The Uber Go-Style Guide" was used as a guide. It has been turned into a container with Docker. Licensed under the MIT License.
+This document specifies the tools used in the Key-Value store and reorganizes how to use them. In this created service, In-Memory Key-Value Service was created and how to use the API is specified in the HTML file in the folder named "doc". While writing the service, it was tried to comply with the "DDD" Design Pattern rules. In addition, the Go Documentation was followed and "The Uber Go-Style Guide" was used as a guide. It has been turned into a container with Docker. Licensed under the MIT License.
 
 
 ---
